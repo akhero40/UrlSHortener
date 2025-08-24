@@ -3,6 +3,8 @@ import {readFile} from 'fs/promises'
 import { writeFile } from 'fs/promises';
 import path from 'path'
 import crypto from 'crypto';
+import dotenv from 'dotenv';
+dotenv.config();
 
 
 import { error } from 'console';
@@ -94,7 +96,8 @@ const server=createServer(async(req,res)=>{
         }
     
 })
+const PORT=process.env.PORT||3000;
 
-server.listen(3002,()=>{
+server.listen(PORT,()=>{
     console.log("server is running");
 })
